@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include <uchar.h>
 
 /**
- * Define Pythagoras class
+ * Define Phytagoras class
  */
-typedef struct Pythagoras Pythagoras;
-struct Pythagoras {
+typedef struct Phytagoras Phytagoras;
+struct Phytagoras {
     /**
      * Variables header...
      */
@@ -16,21 +15,21 @@ struct Pythagoras {
     /**
      * Functions header...
      */
-    double (*result)(Pythagoras *shape);
+    double (*result)(Phytagoras *shape);
 };
 
 /**
  * Functions
  */
-double calc(Pythagoras *object) {
+double calc(Phytagoras *object) {
         return object->x * object->y;
 }
 
 /**
  * Constructor
  */
-Pythagoras _Pythagoras() {
-    Pythagoras s;
+Phytagoras _Phytagoras() {
+    Phytagoras s;
 
     s.x = 1;
     s.y = 1;
@@ -38,4 +37,8 @@ Pythagoras _Pythagoras() {
     s.result = calc;
 
     return s;
+}
+
+void main(){
+    // gcc -shared -o phytagoras.dll phytagoras.c
 }
